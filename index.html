@@ -1804,16 +1804,40 @@
                3. Ve a Share > Embed > Inline
                4. Reemplaza el div de abajo con el código de Cal.com
           -->
-            <div class="calcom-embed" style="margin-top: 28px">
-              <p style="margin-bottom: 6px">
-                📅 Aquí irá tu calendario de Cal.com
-              </p>
-              <p>
-                Crea tu cuenta en <strong>cal.com</strong> y reemplaza este
-                bloque con tu embed
-              </p>
-            </div>
-          </div>
+            <div style="margin-top:28px;">
+  <script type="text/javascript">
+    (function (C, A, L) {
+      let p = function (a, ar) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () {
+        let cal = C.Cal; let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {}; cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () { p(api, arguments); };
+          const namespace = ar[1]; api.q = api.q || [];
+          typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar);
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin:"https://cal.com"});
+    Cal("inline", {
+      elementOrSelector:"#cal-embed",
+      calLink: "agenciafor/diagnostico-gratuito-30-min",
+      layout: "month_view"
+    });
+    Cal("ui", {
+      styles: { branding: { brandColor: "#FF8A00" } },
+      hideEventTypeDetails: false,
+    });
+  </script>
+  <div id="cal-embed" style="min-height:500px;border-radius:12px;overflow:hidden;"></div>
+</div>
 
           <div class="agenda-form" data-aos="fade-left" data-aos-delay="100">
             <div class="form-title">Cuéntanos sobre tu negocio</div>
@@ -1860,7 +1884,7 @@
                     type="tel"
                     id="whatsapp"
                     name="whatsapp"
-                    placeholder="+56 9 XXXX XXXX"
+                    placeholder="+56 9 32772364"
                   />
                 </div>
               </div>
@@ -1987,7 +2011,7 @@
               >
               <!-- Reemplaza href con tu WhatsApp real -->
               <a
-                href="https://wa.me/56900000000"
+                href="https://wa.me/56932772364"
                 class="social-link"
                 title="WhatsApp"
                 onclick="trackEvent('clic_social_whatsapp')"
@@ -2026,7 +2050,7 @@
               <!-- Reemplaza con tu WhatsApp real -->
               <li>
                 <a
-                  href="https://wa.me/56900000000"
+                  href="https://wa.me/56932772364"
                   onclick="trackEvent('clic_wa_footer')"
                   >WhatsApp directo</a
                 >
@@ -2055,7 +2079,7 @@
        Reemplaza el número en el href
        ===================================================== -->
     <a
-      href="https://wa.me/56900000000?text=Hola%20Francisco%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20servicios%20FOR"
+      href="https://wa.me/56932772364?text=Hola%20Francisco%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20servicios%20FOR"
       class="wa-float"
       target="_blank"
       title="Escríbenos por WhatsApp"
